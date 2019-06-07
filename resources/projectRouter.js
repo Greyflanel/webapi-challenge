@@ -63,27 +63,16 @@ router.put('/:id', (req, res) => {
     })
 })
 
-// router.get('/actions', (req, res) => {
-//     const projectId = req.body
-//     projectdb
-//       .getProjectActions(projectId)
-//       .then(action => {
-//        res.status(200).json(action)
-//       })
-//       .catch(error => {
-//         console.log(error);
-//         res.status(500).json({ message: "error retrieving actions" });
-//       });
-//   });
 
-router.get('/actions', async (req, res) => {
-    try {
-    const projectId  = req.body
-    const posts = await projectdb.getProjectActions(projectId);
-    res.status(200).json(posts);
-    } catch (error) {
-        console.log(error);
-    }
-});
+
+// router.get('/actions/:project_id', async (req, res) => {
+//     try {
+//     const project_id  = req.params
+//     const actions = await projectdb.getProjectActions(project_id);
+//     res.status(200).json(actions);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// });
 
 module.exports = router;

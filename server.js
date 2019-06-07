@@ -7,8 +7,8 @@ const actionRoutes = require('./resources/actionRouter');
 const server = express();
 
 server.use(express.json());
-server.use('/', logger, projectRoutes);
-server.use('/actions', actionRoutes);
+server.use('/projects', logger, projectRoutes);
+server.use('/actions', logger, actionRoutes);
 server.use(helmet());
 
 
